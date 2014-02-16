@@ -12,16 +12,15 @@ Jenkins.instance.items.each { item ->
 
     if(item.buildDiscarder == null) {
         println("No BuildDiscarder")
-        item.buildDiscarder = new hudson.tasks.LogRotator(daysToKeep,numToKeep, artifactDaysToKeep, artifactNumToKeep)
-        item.save()
         println("Set BuildDiscarder to LogRotator")
     } else {
         println("BuildDiscarder: " + item.buildDiscarder.getClass())
         println("Found setting: " + "days to keep=" + item.buildDiscarder.daysToKeepStr + "; num to keep=" + item.buildDiscarder.numToKeepStr + "; artifact day to keep=" + item.buildDiscarder.artifactDaysToKeepStr + "; artifact num to keep=" + item.buildDiscarder.artifactNumToKeepStr)
-        item.buildDiscarder = new hudson.tasks.LogRotator(daysToKeep,numToKeep, artifactDaysToKeep, artifactNumToKeep)
-        item.save()
         println("Set new setting")
     }
+    
+    item.buildDiscarder = new hudson.tasks.LogRotator(daysToKeep,numToKeep, artifactDaysToKeep, artifactNumToKeep)
+    item.save()
     println("")
     
 }
