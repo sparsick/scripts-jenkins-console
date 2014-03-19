@@ -4,7 +4,7 @@
 
     <groupId>com.github.skosmalla.jenkins.scripts</groupId>
     <artifactId>scripts-jenkins-console</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>scripts-jenkins-console</name>
@@ -87,12 +87,12 @@
         <dependency>
             <groupId>org.jenkins-ci.main</groupId>
             <artifactId>jenkins-core</artifactId>
-            <version>1.534</version>
+            <version>1.555</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>subversion</artifactId>
-            <version>1.51</version>
+            <version>2.2</version>
         </dependency>
     </dependencies>
     

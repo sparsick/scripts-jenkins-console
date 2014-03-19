@@ -17,12 +17,12 @@ Hudson.instance.items.each { item ->
 
 
 
-            newLocations.add(new hudson.scm.SubversionSCM.ModuleLocation(newRemoteUrl, location.local, location.depthOption,location.ignoreExternalsOption))
+            newLocations.add(new hudson.scm.SubversionSCM.ModuleLocation(newRemoteUrl, location.credentialsId, location.local, location.depthOption,location.ignoreExternalsOption))
         }
 
         def newScm = new hudson.scm.SubversionSCM(newLocations, item.scm.workspaceUpdater,
             item.scm.browser, item.scm.excludedRegions, item.scm.excludedUsers, item.scm.excludedRevprop, item.scm.excludedCommitMessages,
-            item.scm.includedRegions, item.scm.ignoreDirPropChanges, item.scm.filterChangelog)
+            item.scm.includedRegions, item.scm.ignoreDirPropChanges, item.scm.filterChangelog, item.scm.additionalCredentials)
 
         newScm.locations.each { location ->
             println("New SCM Location Remote : " + location.remote)

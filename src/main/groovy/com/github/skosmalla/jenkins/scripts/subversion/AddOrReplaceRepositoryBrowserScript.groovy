@@ -11,7 +11,7 @@ Hudson.instance.items.each { item ->
 
         def newScm = new hudson.scm.SubversionSCM(Arrays.asList(item.scm.locations), item.scm.workspaceUpdater,
             newRepositoryBrowser, item.scm.excludedRegions, item.scm.excludedUsers, item.scm.excludedRevprop, item.scm.excludedCommitMessages,
-            item.scm.includedRegions, item.scm.ignoreDirPropChanges, item.scm.filterChangelog)
+            item.scm.includedRegions, item.scm.ignoreDirPropChanges, item.scm.filterChangelog, item.scm.additionalCredentials)
 
         item.scm = newScm
         item.save()
