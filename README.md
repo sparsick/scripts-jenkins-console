@@ -9,8 +9,12 @@ Currently, following Groovy scripts exit:
 * Add or modify the setting for "old build disappear" in each job.
 
 
-##Using 
+##Usage
 
 Copy the script (exclude the package statement) and paste it ínto the Jenkins script console.
+
+##Compatibility
+
+All scripts are tested with Jenkins version 1.534 and Jenkins Subversion Plugin version 1.51
 
 
