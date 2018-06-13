@@ -1,9 +1,15 @@
 package com.github.skosmalla.jenkins.scripts.subversion
 
+import hudson.model.Hudson
+
+/**
+ * Tested with Jenkins version 1.555 and Subversion Plugin version 2.2
+ */
+
 def oldHostName = "old.hostname.com"
 def newHostName = "new.hostname.com"
 
-Hudson.instance.items.each { item ->
+Hudson.instance.items.each {item ->
 
     if(item.scm instanceof hudson.scm.SubversionSCM) {
         println("JOB : "+item.name)

@@ -1,10 +1,16 @@
 package com.github.skosmalla.jenkins.scripts.subversion
 
+import hudson.model.Hudson
+
+/**
+ * Tested with Jenkins version 1.555 and Subversion Plugin version 2.2
+ */
+
 def newRepositoryBrowserRootUrl = new URL("http://root.url.to.your.sventon.instance")
 def newRepositoryInstance = "repository-instance-name"
 def newRepositoryBrowser = new  hudson.scm.browsers.Sventon2(newRepositoryBrowserRootUrl, newRepositoryInstance)
 
-Hudson.instance.items.each { item ->
+Hudson.instance.items.each {item ->
 
     if(item.scm instanceof hudson.scm.SubversionSCM) {
         println("JOB: " + item.name)

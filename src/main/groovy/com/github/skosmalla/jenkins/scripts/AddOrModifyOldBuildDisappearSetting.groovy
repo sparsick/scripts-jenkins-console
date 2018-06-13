@@ -1,11 +1,17 @@
 package com.github.skosmalla.jenkins.scripts
 
+import jenkins.model.Jenkins
+
+/**
+ * Tested with Jenkins version 1.555
+ */
+
 def daysToKeep = 28
 def numToKeep = 10
 def artifactDaysToKeep = -1
 def artifactNumToKeep = -1
 
-Jenkins.instance.items.each { item ->
+Jenkins.instance.items.each {item ->
     println("=====================")
     println("JOB: " + item.name)
     println("Job type: " + item.getClass())
